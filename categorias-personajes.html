@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes | Obras Independientes</title>
+
+    <link rel="icon" type="image/png" href="https://cdn.phototourl.com/member/2026-08-20-efd647dc-7197-4472-a923-cc76ca4a7ef3.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="categorias-personajes.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a class="back-button" href="obras-independientes.html" aria-label="Volver a Obras Independientes">←</a>
+
+        <a class="logo" href="obras-independientes.html">
+            Martiiin<span> Productions</span>
+        </a>
+
+
+        </nav>
+    </header>
+
+    <main id="inicio">
+        <section class="characters-section" id="categorias">
+            <div class="section-heading">
+                <p class="section-label">OBRAS INDEPENDIENTES</p>
+                <h1>PERSONAJES</h1>
+                <p class="section-description">
+                    Explora las diferentes categorías de personajes que forman parte del universo de Obras Independientes.
+                </p>
+            </div>
+
+            <div class="lore-cards">
+                <a class="lore-card lore-card-characters" href="personajes.html" aria-label="Principales">
+                    <img class="lore-card-image" src="https://cdn.phototourl.com/member/2026-08-20-0a70f981-00e6-499a-8eca-3238149f1c0f.png" alt="Principales">
+                    <div class="lore-card-content">
+                        <span class="lore-card-number"></span>
+                        <h2>Principales</h2>
+                        <span class="lore-card-arrow">→</span>
+                    </div>
+                </a>
+
+                <a class="lore-card lore-card-characters" href="personajes-mamones.html" aria-label="Los Mamones">
+                    <img class="lore-card-image" src="https://cdn.phototourl.com/member/2026-09-05-e5357af9-be97-4965-a3e3-eb4a2f20499f.png" alt="Los Mamones">
+                    <div class="lore-card-content">
+                        <span class="lore-card-number"></span>
+                        <h2>Los Mamones</h2>
+                        <span class="lore-card-arrow">→</span>
+                    </div>
+                </a>
+
+                <a class="lore-card lore-card-characters" href="personajes-poderosos.html" aria-label="Los Poderosos">
+                    <img class="lore-card-image" src="https://cdn.phototourl.com/member/2026-09-05-e053ceed-fefa-47b0-95ec-dfae07685d08.png" alt="Los Poderosos">
+                    <div class="lore-card-content">
+                        <span class="lore-card-number"></span>
+                        <h2>Los Poderosos</h2>
+                        <span class="lore-card-arrow">→</span>
+                    </div>
+                </a>
+
+                <a class="lore-card lore-card-characters" href="personajes-organizaciones.html" aria-label="Organizaciones">
+                    <img class="lore-card-image" src="https://cdn.phototourl.com/member/2026-09-05-108e2a37-78e3-426f-9691-16475bb2b81a.png" alt="Organizaciones">
+                    <div class="lore-card-content">
+                        <span class="lore-card-number"></span>
+                        <h2>Organizaciones Criminales</h2>
+                        <span class="lore-card-arrow">→</span>
+                    </div>
+                </a>
+
+                <a class="lore-card lore-card-characters" href="personajes-autoridad-politicos.html" aria-label="Autoridad y Políticos">
+                    <img class="lore-card-image" src="https://cdn.phototourl.com/member/2026-09-05-23b51fb5-4726-40e5-9059-b51e2b4e4a31.png" alt="Autoridad &amp; Políticos">
+                    <div class="lore-card-content">
+                        <span class="lore-card-number"></span>
+                        <h2>Autoridad &amp; Políticos</h2>
+                        <span class="lore-card-arrow">→</span>
+                    </div>
+                </a>
+
+                <div class="lore-card lore-card-characters lore-card-coming-soon">
+                    <img class="lore-card-image" src="https://cdn.phototourl.com/member/2026-09-06-c6fdedac-58eb-42c0-b60f-919b89a604d3.png" alt="Próximamente">
+                    <div class="lore-card-content">
+                        <span class="lore-card-number"></span>
+                        <h2>Próximamente</h2>
+                        <span class="lore-card-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">Martiiin Productions</div>
+        <p class="copyright">© 2026 Martiiin Productions</p>
+    </footer>
+
+<script>
+
+/* ========================================
+   TRANSICIÓN ENTRE PÁGINAS
+======================================== */
+
+window.addEventListener("load", function () {
+
+    document.body.classList.add("page-loaded");
+
+});
+
+
+document.querySelectorAll("a[href]").forEach(function (link) {
+
+    link.addEventListener("click", function (event) {
+
+        const href = link.getAttribute("href");
+
+        /* Ignorar enlaces especiales */
+        if (
+            !href ||
+            href.startsWith("#") ||
+            href.startsWith("http") ||
+            link.target === "_blank"
+        ) {
+            return;
+        }
+
+        event.preventDefault();
+
+        document.body.classList.remove("page-loaded");
+        document.body.classList.add("page-leaving");
+
+        setTimeout(function () {
+
+            window.location.href = href;
+
+        }, 500);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

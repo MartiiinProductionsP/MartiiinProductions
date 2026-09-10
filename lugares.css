@@ -1,0 +1,482 @@
+/* ========================================
+   GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: white;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 5%;
+
+    z-index: 1000;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.96),
+            rgba(0,0,0,0)
+        );
+
+    transition: background .3s;
+}
+
+.navbar.scrolled {
+    background: rgba(5,5,5,.97);
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    margin-right: 22px;
+    transition: .2s;
+}
+
+.back-button:hover {
+    transform: translateX(-3px);
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo span {
+    font-weight: 400;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    margin-left: 50px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: .2s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+
+/* ========================================
+   LUGARES
+======================================== */
+
+.places-section {
+    min-height: 100vh;
+    padding: 105px 7% 80px;
+    background: #050505;
+}
+
+.section-heading {
+    margin-bottom: 36px;
+}
+
+.section-heading h1 {
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: .95;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+
+/* ========================================
+   CUADRÍCULA
+======================================== */
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 76px 37px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+
+/* ========================================
+   TARJETA TIPO POLAROID
+======================================== */
+
+.place-card {
+    width: 100%;
+    background: #eee9dc;
+    padding: 9px 9px 0;
+    border-radius: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,.22);
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 32px rgba(0,0,0,.35);
+}
+
+.place-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1.04;
+    overflow: hidden;
+    background: #d8d4ca;
+}
+
+.place-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.place-name {
+    min-height: 54px;
+    padding: 10px 7px 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #111;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(15px, 1.45vw, 20px);
+    line-height: 1.05;
+    letter-spacing: .2px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .places-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 55px 28px;
+    }
+
+}
+
+@media (max-width: 760px) {
+
+    nav {
+        display: none;
+    }
+
+    .places-section {
+        padding: 105px 5% 60px;
+    }
+
+    .places-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px 20px;
+        max-width: none;
+    }
+
+    .place-card {
+        padding: 8px 8px 0;
+    }
+
+    .place-name {
+        min-height: 48px;
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .places-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .places-section {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .place-name {
+        font-size: 17px;
+    }
+
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    padding:
+
+        50px
+
+        7%
+
+        35px;
+
+    color: #777;
+
+    border-top:
+
+        1px solid #181818;
+
+}
+
+
+.footer-logo {
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+
+footer p {
+
+    font-size: 13px;
+
+}
+
+
+.copyright {
+
+    margin-top: 30px;
+
+}
+
+
+/* ========================================
+   VISOR DE LUGAR
+======================================== */
+
+.place-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+}
+
+.place-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.place-modal-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, .72);
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.place-modal-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(900px, 88vw);
+    max-height: 88vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: scale(.90);
+    opacity: 0;
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease;
+}
+
+.place-modal.active .place-modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.place-modal-image {
+    width: 100%;
+    max-height: 88vh;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .7);
+
+    background: #111;
+}
+
+.place-modal-image img {
+    width: 100%;
+    height: auto;
+    max-height: 88vh;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+.place-modal-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 4;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.75);
+    color: white;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.place-modal-close:hover {
+    background: rgba(0,0,0,.9);
+    transform: scale(1.06);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.place-card:focus-visible {
+    outline: 2px solid #aaa;
+    outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+
+    .place-modal {
+        padding: 18px;
+    }
+
+    .place-modal-content {
+        width: 94vw;
+        max-height: 90vh;
+    }
+
+    .place-modal-image,
+    .place-modal-image img {
+        max-height: 90vh;
+    }
+
+    .place-modal-close {
+        top: 8px;
+        right: 8px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .place-modal {
+        padding: 10px;
+    }
+
+    .place-modal-content {
+        width: 96vw;
+    }
+
+}
+
+
+/* ========================================
+   TRANSICIÓN ENTRE PÁGINAS
+======================================== */
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-leaving {
+    opacity: 0;
+}

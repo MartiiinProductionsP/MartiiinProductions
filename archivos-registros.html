@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivos & Registros | Martiiin Productions</title>
+    <link rel="icon" type="image/png" href="https://cdn.phototourl.com/member/2026-08-20-efd647dc-7197-4472-a923-cc76ca4a7ef3.png">
+    <link rel="stylesheet" href="archivos-registros.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a class="back-button" href="obras-independientes.html" aria-label="Volver a Obras Independientes">←</a>
+    <a class="logo" href="obras-independientes.html">Martiiin<span> Productions</span></a>
+</header>
+
+<main>
+    <section class="archives-section">
+        <div class="archives-content">
+
+            <h1>ARCHIVOS &amp; REGISTROS</h1>
+
+            <div class="archives-grid">
+
+                <button class="archive-card" type="button" data-modal="callsModal">
+                    <div class="archive-card-content">
+                        <span class="archive-card-label"></span>
+                        <h2>LLAMADAS TELEFONICAS</h2>
+                        <span class="archive-card-arrow">→</span>
+                    </div>
+                </button>
+
+                <button class="archive-card" type="button" data-modal="propagandaModal">
+                    <div class="archive-card-content">
+                        <span class="archive-card-label"></span>
+                        <h2>PROPAGANDA</h2>
+                        <span class="archive-card-arrow">→</span>
+                    </div>
+                </button>
+
+                <button class="archive-card" type="button" data-modal="newspapersModal">
+                    <div class="archive-card-content">
+                        <span class="archive-card-label"></span>
+                        <h2>PERIODICOS</h2>
+                        <span class="archive-card-arrow">→</span>
+                    </div>
+                </button>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- MODAL: LLAMADAS TELEFONICAS -->
+<div class="archive-modal" id="callsModal" aria-hidden="true">
+    <div class="archive-modal-backdrop"></div>
+
+    <div class="archive-modal-content archive-modal-audio">
+        <button class="archive-modal-close" type="button" aria-label="Cerrar">×</button>
+
+        <h2>LLAMADAS TELEFONICAS</h2>
+
+        <div class="audio-list">
+
+            <article class="audio-file">
+                <div class="audio-file-header">
+<h3>CARCEL DE LIBERTY CITY - 24-11-1985</h3>
+                </div>
+                <!-- PEGA AQUI EL LINK DEL AUDIO -->
+                <audio controls controlsList="nodownload" preload="metadata" oncontextmenu="return false;">
+    <source src="https://res.cloudinary.com/q0vevd2r/video/upload/v1789024393/CARCEL_DE_LIBERTY_CITY_-_24.11.1985.mp3" type="audio/mpeg">
+                    Tu navegador no puede reproducir este audio.
+                </audio>
+            </article>
+
+            <article class="audio-file">
+                <div class="audio-file-header">
+<h3>CARCER CITY EMERGENCY - 14-10-1980</h3>
+                </div>
+                <!-- PEGA AQUI EL LINK DEL AUDIO -->
+                <audio controls controlsList="nodownload" preload="metadata" oncontextmenu="return false;">
+    <source src="https://res.cloudinary.com/q0vevd2r/video/upload/v1789024662/CARCER_CITY_EMERGENCY_-_14.10.1980.mp3" type="audio/mpeg">
+                    Tu navegador no puede reproducir este audio.
+                </audio>
+            </article>
+
+            <article class="audio-file">
+                <div class="audio-file-header">
+<h3>RED COUNTY, LLAMADA DE TELEFONO - 08-03-1994</h3>
+                </div>
+                <!-- PEGA AQUI EL LINK DEL AUDIO -->
+                <audio controls controlsList="nodownload" preload="metadata" oncontextmenu="return false;">
+    <source src="https://res.cloudinary.com/q0vevd2r/video/upload/v1789024793/RED_COUNTY_LLAMADA_DE_TELEFONO_-_08.03.1994.mp3" type="audio/mpeg">
+                    Tu navegador no puede reproducir este audio.
+                </audio>
+            </article>
+
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: PROPAGANDA -->
+<div class="archive-modal" id="propagandaModal" aria-hidden="true">
+    <div class="archive-modal-backdrop"></div>
+
+    <div class="archive-modal-content archive-modal-images">
+        <button class="archive-modal-close" type="button" aria-label="Cerrar">×</button>
+
+        <h2>PROPAGANDA</h2>
+
+        <div class="propaganda-list">
+            <img src="https://cdn.phototourl.com/member/2026-09-10-58bef510-1525-4131-b424-8eedc493df06.jpg"
+                 alt="Propaganda 01">
+
+            <img src="https://cdn.phototourl.com/member/2026-09-10-1b0e86bc-b5e4-4aec-8406-581b7ff849c8.png"
+                 alt="Propaganda 02">
+
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: PERIODICOS -->
+<div class="archive-modal" id="newspapersModal" aria-hidden="true">
+    <div class="archive-modal-backdrop"></div>
+
+    <div class="archive-modal-content archive-modal-images">
+        <button class="archive-modal-close" type="button" aria-label="Cerrar">×</button>
+
+        <h2>PERIODICOS</h2>
+
+        <div class="propaganda-list">
+            <img src="https://cdn.phototourl.com/member/2026-09-10-4e67c196-2948-4bba-9620-161cafb2313f.jpg"
+                 alt="Periódico">
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-logo">Martiiin Productions</div>
+    <p></p>
+    <p class="copyright">© 2026 Martiiin Productions</p>
+</footer>
+
+<script src="archivos-registros.js"></script>
+</body>
+</html>
